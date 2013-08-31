@@ -20,6 +20,7 @@ class MSSQLConnection(object):
             print '[AlchemyConnection] Connection successful for user %s to database %s' % (mssql['user'],
                                                                                             mssql['database'])
         except pymssql.Error as e:
+            print 'Connection failed.'
             pass
 
     def close(self):
