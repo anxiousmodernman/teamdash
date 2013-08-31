@@ -1,12 +1,16 @@
-import pymssql
+
+
+import pyodbc
 import sys
-from dbconfig import mssql
+from dbconfig import mssql_connection
 # sys.path.append("/home/coleman/Code/")
+
+
 
 
 class MSSQLConnection(object):
     """
-    Connection to MS SQL Server database.
+    Connection to database.
     """
     def __init__(self):
 
@@ -15,12 +19,10 @@ class MSSQLConnection(object):
     def createConnection(self):
 
         try:
-            self.con = pymssql.connect(host=mssql['host'], user=mssql['user'], 
-                                password=mssql['password'], database=mssql['database'])
-            print '[AlchemyConnection] Connection successful for user %s to database %s' % (mssql['user'],
-                                                                                            mssql['database'])
-        except pymssql.Error as e:
-            print 'Connection failed.'
+            self.con = pyodbc.connect('DSN=%s;UID=%s;PWD=%s' % (mssql_connection['dsn'], mssql_connection['UID'], mssql_connection['PWD']))
+            print '[AlchemyConnection] Connection successful for user %s to database %s' % (mssql_connection['UID'], mssql_connection['dsn'])
+        except pyodbc.DatabaseError as e:
+            print 'Database connection failed.'
             pass
 
     def close(self):
@@ -28,11 +30,8 @@ class MSSQLConnection(object):
         self.con.close()
 
     def getCursor(self):
-        """
-        Returns a pymssql cursor object. Call query methods on this cursor object.
-        """
         self.cursor = self.con.cursor()
-        return self.cursor  # returns pymssql cursor object
+        return self.cursor  # returns pyodbc cursor object
 
     def commit(self):
 
@@ -43,14 +42,4 @@ class MSSQLConnection(object):
 
 
 
-"""
-TODO remove this
-Query methods for cursor objects:
 
-cur.callproc       cur.executemany    cur.next           cur.setinputsizes
-cur.close          cur.fetchall       cur.nextset        cur.setoutputsize
-cur.connection     cur.fetchmany      cur.returnvalue    
-cur.description    cur.fetchone       cur.rowcount       
-cur.execute        cur.lastrowid      cur.rownumber
-
-"""
