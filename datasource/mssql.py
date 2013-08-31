@@ -1,5 +1,3 @@
-
-
 import pyodbc
 import sys
 from dbconfig import mssql_connection
@@ -36,7 +34,6 @@ class MSSQLConnection(object):
     def commit(self):
 
         self.con.commit()
-
 
 
 
