@@ -1,0 +1,9 @@
+# unix requirements
+
+# List commands you think we need here. 
+# Ideally, we should have a really fast way to build the project
+
+sudo apt-get install unixodbc unixodbc-dev python python-dev tdsodbc
+
+
+
