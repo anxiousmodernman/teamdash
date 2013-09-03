@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, include, url
-from reports.views import ReportListAPIView
+from reports.views import ReportListAPIView, ReportRetrieveAPIView
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -15,5 +15,6 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^api/report', ReportListAPIView.as_view(), name='list')
+    url(r'^api/report/$', ReportListAPIView.as_view(), name='list'),
+    url(r'^api/report/(?P<pk>\d+)/$', ReportRetrieveAPIView.as_view(), name='retrieve')
 )

@@ -6,7 +6,7 @@ class Report(models.Model):
     name = models.CharField(max_length=200)
     source_code = models.TextField()
     language = models.CharField(max_length=50)
-    version = models.CharField(max_length=20)
+    version = models.CharField(max_length=20, blank=True)  # can be blank
     author = models.CharField(max_length=50)
     schema = JSONField()
 
