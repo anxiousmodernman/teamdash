@@ -36,6 +36,19 @@ class MSSQLConnection(object):
         self.con.commit()
 
 
+"""
+CURSOR METHODS
+
+c.arraysize         c.executemany       c.nextset           c.rowVerColumns
+c.close             c.fetchall          c.noscan            c.rowcount
+c.columns           c.fetchmany         c.primaryKeys       c.setinputsizes
+c.commit            c.fetchone          c.procedureColumns  c.setoutputsize
+c.connection        c.foreignKeys       c.procedures        c.skip
+c.description       c.getTypeInfo       c.rollback          c.statistics
+c.execute           c.next              c.rowIdColumns      c.tables
+"""
+
+
 
 
 
