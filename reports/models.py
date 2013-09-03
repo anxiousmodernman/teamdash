@@ -10,4 +10,7 @@ class Report(models.Model):
     author = models.CharField(max_length=50)
     schema = JSONField()
 
+    def __unicode__(self):
+        return self.name  # TODO upgrade this string representation?
+
 
