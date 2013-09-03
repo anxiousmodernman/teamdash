@@ -1,4 +1,7 @@
 Django>=1.3
 djangorestframework
 pyodbc
-
+South>=0.7.3
+Celery
+jsonfield
+ipython

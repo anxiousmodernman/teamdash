@@ -11,6 +11,7 @@ Technologies
 
 Making AngularJS and Django play nicely together requires redefining Angular's template tag. We will follow the tutorial in this video:
 http://www.youtube.com/watch?v=Q8FRBGTJ020
+...which features code from [this repository|https://github.com/gkappel/demo-d201305/blob/master/demo/static/js/demo.js]
 
 ```javascript
 /* AngularJS app definition */

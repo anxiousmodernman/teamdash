@@ -5,13 +5,13 @@ when you run "manage.py test".
 Replace this with more appropriate tests for your application.
 """
 
-# from django.test import TestCase
-import unittest
+from django.test import TestCase
+# import unittest
 from mssql import MSSQLConnection
 
 
 
-class DatabaseTest(unittest.TestCase):
+class MSSQLDatabaseTest(TestCase):
     def test_multi_query(self):
         """
         Tests two queries at a time.
@@ -38,5 +38,5 @@ c.description       c.getTypeInfo       c.rollback          c.statistics
 c.execute           c.next              c.rowIdColumns      c.tables
 """
 
-if __name__ == '__main__':
-    unittest.main()
+# if __name__ == '__main__':
+#     unittest.main()
