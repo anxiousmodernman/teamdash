@@ -8,20 +8,18 @@ Replace this with more appropriate tests for your application.
 from django.test import TestCase
 # import unittest
 from mssql import MSSQLConnection
-
+from engines import getMSSQLEngine
+import unittest
 
 
 class MSSQLDatabaseTest(TestCase):
-    def test_multi_query(self):
-        """
-        Tests two queries at a time.
-        """
-        conn = MSSQLConnection()
-        cur = conn.getCursor()
-        if cur:
-            print 'cursor achieved!'
-        else:
-            print 'something when wrong.'
+
+    def testConnection(self):
+        engine = getMSSQLEngine()
+        conn = engine.connect()
+        result_proxy = conn.execute("select brief_name from brief where brief_name = 'AAAA'")
+        result = [item['brief_name'] for item in result_proxy]
+        self.assertEquals(result, ['AAAA'])
         conn.close()
 
 

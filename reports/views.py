@@ -7,3 +7,5 @@ class ReportListAPIView(ListCreateAPIView):
 
 class ReportRetrieveAPIView(RetrieveUpdateAPIView):
     model = Report
+
+

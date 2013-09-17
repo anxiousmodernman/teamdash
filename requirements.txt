@@ -6,3 +6,5 @@ django-celery
 jsonfield
 ipython
 pytz
+nose
+SQLAlchemy

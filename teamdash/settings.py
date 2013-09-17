@@ -1,4 +1,17 @@
 # Django settings for teamdash project.
+import djcelery
+djcelery.setup_loader()
+
+# Celery configuration
+BROKER_HOST = "localhost"
+BROKER_PORT = 5672
+BROKER_USER = "guest"
+BROKER_PASSWORD = "guest"
+BROKER_VHOST = "/"
+CELERY_RESULT_BACKEND = "amqp"
+CELERY_IMPORTS = ("app.module.tasks", )
+
+
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -126,7 +139,9 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'reports',
-    'datasource'
+    'datasource',
+    'djcelery',
+    'celerytest',
 )
 
 # A sample logging configuration. The only tangible logging
