@@ -8,6 +8,7 @@ Setup
 ----------------------------
 1. Create a Python virtualenv
 2. install the requirements.txt
+3. Configure your IDE
 
 
 Technologies
@@ -15,6 +16,7 @@ Technologies
 * Django
 * AngularJS
 * Django REST Framework
+* Celery
 
 
 AngularJS Templates
@@ -35,3 +37,8 @@ shopping.config(function($interpolateProvider) {
 
 // define controllers, factories, etc below...
 ```
+
+
+Celery: our message queue
+-------------------------
+An informative blog post on using Celery with async JavaScript is here: https://zapier.com/blog/async-celery-example-why-and-how/
