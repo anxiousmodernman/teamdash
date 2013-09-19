@@ -8,3 +8,6 @@ ipython
 pytz
 nose
 SQLAlchemy
+numpy
+pandas
+pyzmq

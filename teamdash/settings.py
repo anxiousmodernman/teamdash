@@ -9,7 +9,7 @@ BROKER_USER = "guest"
 BROKER_PASSWORD = "guest"
 BROKER_VHOST = "/"
 CELERY_RESULT_BACKEND = "amqp"
-CELERY_IMPORTS = ("app.module.tasks", )
+#CELERY_IMPORTS = ("app.module.tasks", )
 
 
 

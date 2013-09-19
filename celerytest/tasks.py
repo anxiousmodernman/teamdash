@@ -1,6 +1,6 @@
 from celery import task
 
 @task()
-def runJob(runConfig)
-
-    return x + y
+def runJob(runConfig):
+    print 'Wow I got celery working'
+    pass
