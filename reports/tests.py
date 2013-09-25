@@ -6,11 +6,20 @@ Replace this with more appropriate tests for your application.
 """
 
 from django.test import TestCase
+from reports.models import Report
 
 
-# class SimpleTest(TestCase):
-#     def test_basic_addition(self):
-#         """
-#         Tests that 1 + 1 always equals 2.
-#         """
-#         self.assertEqual(1 + 1, 2)
+class ReportsTest(TestCase):
+
+    def create_report(self, name="pandastest", language="python", author="coleman",
+                      path="/scripts/tests/pandastest.py", schema=None):
+        test_report = Report(self, name=name, language=language, author=author,
+                                            path=path, schema=schema)
+        return test_report
+
+    def testGetPath(self):
+        report = self.create_report()
+        hard_coded_path = '/home/coleman/Code/teamdash/reports/scripts/tests/pandastest.py'
+        self.assertEquals(report.getPath(), hard_coded_path)
+
+
